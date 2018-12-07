@@ -1,6 +1,7 @@
 /* eslint-disable global-require, func-names */
 
 module.exports = function (app) {
+	app.use('/api/v1', require('./apis'));
 	// Trang chủ
 	app.use('/', require('./controllers/home'));
 	// Trang DS SP

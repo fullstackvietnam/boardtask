@@ -4,4 +4,12 @@ block content
 	#app.text-center
 		img(src="/img/logo.png" alt="express logo")
 		h2 FullStack Vietnam #{title} App
-		a(href="/products") Sản Phẩm
+		ul.list-unstyled 
+			li.list-item
+				a(href="/products") Sản Phẩm
+			li.list-item
+				a(href="/api/v1") API Home
+			li.list-item
+				a(href="/api/v1/products") API Sản Phẩm
+			li.list-item
+				a(href="/api/v1/product/1") API CT Sản Phẩm

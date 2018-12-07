@@ -16,7 +16,6 @@ router.get('/:id', (req, res, next) => {
 			title: 'Sản phẩm',
 			data: filtered[0]
 		});
-		//  res.json(items); // Dòng này chỉ bật khi viết API
 	});
 });
 
