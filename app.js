@@ -1,64 +1,53 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var sassMiddleware = require('node-sass-middleware');
-// Gọi Route
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var aboutRouter = require('./routes/about');
-// Khởi tạo APP
-var app = express();
-// Gọi Template
-app.set('views', path.join(__dirname, 'views'));
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+
+const app = express();
+const debug = require('debug')('NGUYENXINHDEP:App');
+
+// config
+const config = require('./config/config');
+
+// view engine setup
+app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'pug');
-// Cấu hình
-app.use(express.json());
-app.use(express.urlencoded({
-	extended: false
+
+app.use(logger(config.isProd ? 'combined' : 'dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: false
 }));
 app.use(cookieParser());
-app.use(sassMiddleware({
-	src: __dirname + '/styles',
-	dest: __dirname + '/public',
-	debug: true,
-	outputStyle: 'expanded',
-	indentedSyntax: true, // true = .sass and false = .scss
-	sourceMap: app.get('env') === 'development' ? false : true,
-	// log: function (severity, key, value) {
-	// 	winston.log(severity, 'node-saas-middleware   %s : %s', key, value);
-	// }
-}));
-
+app.use(favicon(path.join(__dirname, 'public', 'favicon/favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
-// Init App
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/about', aboutRouter);
+
+// bootstrap routes
+require('./app/routes')(app);
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
-	if (req.app.get('env') === 'dev') {
-		next(createError(404));
-	} else {
-		res.status(400);
-		res.render('404.pug', {
-			title: "404 We're sorry!",
-			desc: "We couldn't find what you're looking for",
-			btn: "» Go back to the main page"
-		});
-	}
+app.use((req, res, next) => {
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
 // error handler
-app.use(function (err, req, res, next) {
-	// set locals, only providing error in development
-	res.locals.message = err.message;
-	res.locals.error = req.app.get('env') === 'dev' ? err : {};
-	// render the error page
-	res.status(err.status || 500);
-	res.render('error');
+app.use((err, req, res, next) => {
+  // set locals, only providing error in development
+  res.locals.message = err.message; // eslint-disable-line no-param-reassign
+  res.locals.error = config.isDev ? err : {}; // eslint-disable-line no-param-reassign
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+
+
+app.listen(config.server.port, config.server.hostname, () => {
+  debug(`App listening on ${config.server.hostname} port: ${config.server.port}`);
+  app.emit('appStarted');
 });
 
 module.exports = app;

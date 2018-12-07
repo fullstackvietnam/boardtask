@@ -1,2 +1,3 @@
-// Code 
-console.log('FullStack Vietnam')
+$(document).ready(function() {
+    console.log('ready !');
+});
