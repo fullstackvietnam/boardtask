@@ -1,6 +1,10 @@
 /* eslint-disable global-require, func-names */
 
 module.exports = function (app) {
-  // home
-  app.use('/', require('./controllers/home'));
+	// Trang chủ
+	app.use('/', require('./controllers/home'));
+	// Trang DS SP
+	app.use('/products', require('./controllers/products'));
+	// Trang SP Chi tiết
+	app.use('/details', require('./controllers/products-details'));
 };

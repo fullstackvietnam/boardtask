@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	#app
+		.container
+			.row
+				.col
+					h1 Products 
+					table.table.table-bordered
+						thead
+							tr 
+								th SP
+								th Name
+								th Code
+						tbody
+							- for(var sp in data)
+								tr 
+									td
+										a(href="/details/"+data[sp].id) #{data[sp].name}
+									td=data[sp].name
+									td=data[sp].code
