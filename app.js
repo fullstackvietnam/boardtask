@@ -29,9 +29,7 @@ app.use(sassMiddleware({
 	// log: function (severity, key, value) {
 	// 	winston.log(severity, 'node-saas-middleware   %s : %s', key, value);
 	// }
-
 }));
-// app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.use(express.static(path.join(__dirname, 'public')));
 // Init App
