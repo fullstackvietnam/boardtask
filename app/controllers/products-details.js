@@ -9,11 +9,12 @@ router.get('/:id', (req, res, next) => {
 	fs.readFile('./db/products.json', 'utf8', function (err, data) {
 		if (err) throw err;
 		obj = JSON.parse(data);
-		let filtered = Object.keys(obj.lists).filter(key => key == req.params.id - 1);
-		let result = filtered.reduce((r, k) => r.concat(obj.lists[k]), []);
+		var filtered = obj.lists.filter(function(e) {
+			return e.id == req.params.id;
+		  });
 		res.render('details', {
 			title: 'Sản phẩm',
-			data: result[0]
+			data: filtered[0]
 		});
 		//  res.json(items); // Dòng này chỉ bật khi viết API
 	});
