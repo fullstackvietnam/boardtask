@@ -18,14 +18,21 @@ app.use(express.json());
 app.use(express.urlencoded({
 	extended: false
 }));
-
 app.use(cookieParser());
 app.use(sassMiddleware({
-	src: path.join(__dirname, 'styles'),
-	dest: path.join(__dirname, 'public', 'css'),
+	src: __dirname + '/styles',
+	dest: __dirname + '/public',
+	debug: true,
+	outputStyle: 'expanded',
 	indentedSyntax: true, // true = .sass and false = .scss
-	sourceMap: app.get('env') === 'development' ? false : true
+	// sourceMap: app.get('env') === 'development' ? false : true,
+	// log: function (severity, key, value) {
+	// 	winston.log(severity, 'node-saas-middleware   %s : %s', key, value);
+	// }
+
 }));
+// app.use('/public', express.static(path.join(__dirname, 'public')));
+
 app.use(express.static(path.join(__dirname, 'public')));
 // Init App
 app.use('/', indexRouter);
