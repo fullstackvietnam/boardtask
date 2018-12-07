@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	h1= title
+	table.table.table-bordered
+		thead
+			tr 
+				th Username
+				th Name
+				th Email
+		tbody
+			- for(var user in data)
+				tr 
+					td=user
+					td=data[user].name
+					td=data[user].email

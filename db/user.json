@@ -1,0 +1,12 @@
+{
+	"lists": {
+		"admin": {
+			"name": "FullStack Vietnam",
+			"email": "admin@fullstackvietnam.com"
+		},
+		"demo": {
+			"name": "FullStack USA",
+			"email": "demo@demo.com"
+		}
+	}
+}
