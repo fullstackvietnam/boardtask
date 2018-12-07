@@ -26,7 +26,7 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 console.log(app.get('env'))
-if (app.get('env') !== 'development') {
+if (app.get('env') === 'development') {
 	app.locals.pretty = true;
 	server.listen(port, listening);
 	function listening() {

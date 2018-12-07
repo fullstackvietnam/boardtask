@@ -25,7 +25,7 @@ app.use(sassMiddleware({
 	debug: true,
 	outputStyle: 'expanded',
 	indentedSyntax: true, // true = .sass and false = .scss
-	// sourceMap: app.get('env') === 'development' ? false : true,
+	sourceMap: app.get('env') === 'development' ? false : true,
 	// log: function (severity, key, value) {
 	// 	winston.log(severity, 'node-saas-middleware   %s : %s', key, value);
 	// }
