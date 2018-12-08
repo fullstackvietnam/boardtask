@@ -11355,5 +11355,7 @@ body, html {
         max-width: 36px; }
       #app .menuright .nav #logo img {
         max-height: 36px; }
+    #app .menuright #maincontent .card {
+      border-radius: 0; }
 
 /*# sourceMappingURL=style.css.map */
