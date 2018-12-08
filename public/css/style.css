@@ -10277,6 +10277,51 @@ readers do not read off random characters that represent icons */
   position: static;
   width: auto; }
 
+/*!
+ * Font Awesome Free 5.5.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: normal;
+  src: url("../webfonts/fa-brands-400.eot");
+  src: url("../webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.woff") format("woff"), url("../webfonts/fa-brands-400.ttf") format("truetype"), url("../webfonts/fa-brands-400.svg#fontawesome") format("svg"); }
+
+.fab {
+  font-family: 'Font Awesome 5 Brands'; }
+
+/*!
+ * Font Awesome Free 5.5.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../webfonts/fa-regular-400.eot");
+  src: url("../webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-regular-400.woff2") format("woff2"), url("../webfonts/fa-regular-400.woff") format("woff"), url("../webfonts/fa-regular-400.ttf") format("truetype"), url("../webfonts/fa-regular-400.svg#fontawesome") format("svg"); }
+
+.far {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400; }
+
+/*!
+ * Font Awesome Free 5.5.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  src: url("../webfonts/fa-solid-900.eot");
+  src: url("../webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.woff") format("woff"), url("../webfonts/fa-solid-900.ttf") format("truetype"), url("../webfonts/fa-solid-900.svg#fontawesome") format("svg"); }
+
+.fa,
+.fas {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900; }
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -11215,5 +11260,100 @@ template {
     margin-left: 83.33333%; }
   .offset-xl-11 {
     margin-left: 91.66667%; } }
+
+body, html {
+  height: 100%;
+  background: #f2f2f2; }
+
+#app {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap; }
+  #app .menuleft {
+    max-width: 50px;
+    width: 50px;
+    box-shadow: -1px 0 0 0 #e6e6e6 inset, 1px 0 5px #e6e6e6;
+    background: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    #app .menuleft ul li {
+      padding: 0;
+      border: 0;
+      background: none;
+      border-radius: 0;
+      position: relative; }
+      #app .menuleft ul li img {
+        max-width: 26px; }
+      #app .menuleft ul li a {
+        width: calc(100% - 1px);
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0; }
+        #app .menuleft ul li a i {
+          color: #999999; }
+      #app .menuleft ul li:after {
+        content: '';
+        display: block;
+        height: 1px;
+        width: calc(100% - 1px);
+        background: #e6e6e6;
+        position: absolute;
+        bottom: 1px;
+        left: 0; }
+      #app .menuleft ul li:before {
+        content: '';
+        display: block;
+        height: 1px;
+        width: calc(100% - 1px);
+        background: white;
+        position: absolute;
+        bottom: 0;
+        left: 0; }
+      #app .menuleft ul li.active a, #app .menuleft ul li:hover a {
+        background: white; }
+        #app .menuleft ul li.active a i, #app .menuleft ul li:hover a i {
+          color: #1A73E8; }
+      #app .menuleft ul li.active a {
+        position: relative; }
+        #app .menuleft ul li.active a:before {
+          content: '';
+          display: block;
+          width: 0;
+          height: 0;
+          border-top: 7px solid transparent;
+          border-bottom: 7px solid transparent;
+          border-right: 7px solid #e6e6e6;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%); }
+        #app .menuleft ul li.active a:after {
+          content: '';
+          display: block;
+          width: 0;
+          height: 0;
+          border-top: 12px solid transparent;
+          border-bottom: 12px solid transparent;
+          border-right: 12px solid #f2f2f2;
+          position: absolute;
+          top: 50%;
+          right: -6px;
+          transform: translateY(-50%); }
+  #app .menuright {
+    width: auto;
+    flex: 0 0 calc(100% - 50px); }
+    #app .menuright .nav {
+      padding-top: 0;
+      padding-right: 1rem;
+      padding-bottom: 0;
+      padding-left: 1rem; }
+      #app .menuright .nav .nav-link img {
+        max-width: 36px; }
+      #app .menuright .nav #logo img {
+        max-height: 36px; }
 
 /*# sourceMappingURL=style.css.map */

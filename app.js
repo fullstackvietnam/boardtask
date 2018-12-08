@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const app = express();
-const debug = require('debug')('NGUYENXINHDEP:App');
+const debug = require('debug')('myapp:App');
 
 // config
 const config = require('./config/config');

@@ -1,5 +1,94 @@
-@import '../../node_modules/bootstrap/scss/bootstrap'
+@import '../../bower_components/bootstrap/scss/bootstrap'
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss'
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss'
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss'
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss'
 @import '../../bower_components/k-sass-core/dist/sass/k-sass-core-with-bootstrap'
-body 
-	// background: red
+
+body, html 
+	height: 100%
+	background: darken(#fff,5%)
+#app
+	display: flex
+	width: 100%
+	height: 100%
+	flex-wrap: wrap
+	.menuleft
+		max-width: 50px
+		width: 50px
+		box-shadow: -1px 0 0 0 darken(#fff,10%) inset, 1px 0 5px darken(#fff,10%)
+		background: darken(#fff,3%)
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		ul 
+			li 
+				+pad(0)
+				border: 0
+				background: none
+				+bor-rad(0)
+				position: relative
+				img 
+					max-width: 26px
+				a
+					width: calc(100% - 1px)
+					height: 50px
+					display: flex
+					justify-content: center 
+					align-items: center
+					+bor-rad(0)
+					i 
+						color: darken(#fff,40%)
+				&:after 
+					content: ''
+					display: block
+					height: 1px
+					width: calc(100% - 1px)
+					background: darken(#fff,10%)
+					+pos(abs, null null 1px 0)
+				&:before 
+					content: ''
+					display: block
+					height: 1px
+					width: calc(100% - 1px)
+					background: darken(#fff,0%)
+					+pos(abs, null null 0 0)
+				&.active, &:hover
+					a 
+						background: darken(#fff,0%)
+						i 
+							color: #1A73E8
+				&.active
+					a 
+						position: relative
+						&:before 
+							content: ''
+							display: block
+							width: 0 
+							height: 0 
+							border-top: 7px solid transparent
+							border-bottom: 7px solid transparent
+							border-right: 7px solid darken(#fff,10%)
+							+pos(abs, 50% 0 null null)
+							transform: translateY(-50%)
+						&:after 
+							content: ''
+							display: block
+							width: 0 
+							height: 0 
+							border-top: 12px solid transparent
+							border-bottom: 12px solid transparent
+							border-right: 12px solid darken(#fff,5%)
+							+pos(abs, 50% -6px null null)
+							transform: translateY(-50%)
+	.menuright
+		width: auto
+		flex: 0 0 calc(100% - 50px)
+		.nav
+			+pad(0 1rem)
+			.nav-link
+				img 
+					max-width: 36px
+			#logo
+				img 
+					max-height: 36px
