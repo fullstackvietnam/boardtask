@@ -11,6 +11,9 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/products', (req, res, next) => {
+	res.header('Access-Control-Allow-Origin', "*");
+	res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
+	res.header('Access-Control-Allow-Headers', "Content-Type");
 	var obj;
 	fs.readFile('./db/products.json', 'utf8', function (err, data) {
 		if (err) throw err;
@@ -20,6 +23,9 @@ router.get('/products', (req, res, next) => {
 });
 
 router.get('/product/:id', (req, res, next) => {
+	res.header('Access-Control-Allow-Origin', "*");
+	res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
+	res.header('Access-Control-Allow-Headers', "Content-Type");
 	var obj;
 	fs.readFile('./db/products.json', 'utf8', function (err, data) {
 		if (err) throw err;

@@ -3,11 +3,13 @@
 		{
 			"id": 1,
 			"name": "SP 01",
-			"code": "MDISIOS89"
+			"code": "MDISIOS89",
+			"img": "/img/logo.png"
 		},{
 			"id": 2,
 			"name": "SP 02",
-			"code": "78768678"
+			"code": "78768678",
+			"img": "/img/logo.png"
 		}
 	]
 }
