@@ -32,6 +32,7 @@ gulp.task('concat', function () {
 			'bower_components/jquery/dist/jquery.min.js',
 			'bower_components/popper.js/dist/umd/popper.min.js',
 			'bower_components/bootstrap/dist/js/bootstrap.min.js',
+			'bower_components/Sortable/Sortable.min.js',
 		])
 		.pipe(concat('plugins.js'))
 		.pipe(gulp.dest('./public/js'));
