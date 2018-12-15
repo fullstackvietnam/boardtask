@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	#app
+		.container
+			.row
+				.col
+					h1 Login 
+					form(action="/check", method="POST")
+						input(type="text" name="username")
+						input(type="text" name="password")
+						button(type="submit") Chơi
