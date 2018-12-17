@@ -7,19 +7,19 @@ block content
 				li.list-group-item.active
 					a.list-group-item-action(href="/") 
 						img(src="./img/favicon.png", alt="")
+				li.list-group-item 
+					a.list-group-item-action(href="/login") 
+						i.fa.fa-key
+				li.list-group-item 
+					a.list-group-item-action(href="/products") 
+						i.fa.fa-shopping-cart
 				li.list-group-item
-					a.list-group-item-action(href="#") 
-						i.fa.fa-home
-				li.list-group-item 
-					a.list-group-item-action(href="#") 
-						i.fa.fa-home
-				li.list-group-item 
-					a.list-group-item-action(href="#") 
-						i.fa.fa-home
+					a.list-group-item-action(href="/database") 
+						i.fa.fa-database
 			ul.list-group
 				li.list-group-item 
-					a.list-group-item-action(href="#") 
-						i.fa.fa-home
+					a.list-group-item-action(href="/settings") 
+						i.fa.fa-cog
 		.menuright
 			ul.nav.justify-content-between.align-items-center
 				li.nav-item
@@ -39,13 +39,14 @@ block content
 							.card.card-primary
 								h5.card-header Featured
 								.card-body
-									ul#list-1
+									ul.list-group#list-1
 										
 						.col-md-4
 							.card.card-success
 								h5.card-header Featured
 								.card-body
-									ul#list-2
+									ul.list-group#list-2
+
 										
 						.col-md-4
 							.card.card-info

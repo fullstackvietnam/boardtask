@@ -15,11 +15,11 @@ router.get('/products', (req, res, next) => {
 	fs.readFile('./db/products.json', 'utf8', function (err, data) {
 		if (err) throw err;
 		obj = JSON.parse(data);
-		res.json(obj); // Dòng này chỉ bật khi viết API
+		res.json(obj); 
 	});
 });
 
-router.get('/product/:id', (req, res, next) => {
+router.get('/detail/:id', (req, res, next) => {
 	var obj;
 	fs.readFile('./db/products.json', 'utf8', function (err, data) {
 		if (err) throw err;
@@ -30,7 +30,7 @@ router.get('/product/:id', (req, res, next) => {
 		let newjSON = {
 			data: filtered[0]
 		}
-		res.json(newjSON); // Dòng này chỉ bật khi viết API
+		res.json(newjSON); 
 	});
 });
 

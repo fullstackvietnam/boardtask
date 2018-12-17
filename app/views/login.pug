@@ -5,8 +5,11 @@ block content
 		.container
 			.row
 				.col
-					h1 Login 
+					h1.mt-4 Login 
 					form(action="/check", method="POST")
-						input(type="text" name="username")
-						input(type="text" name="password")
-						button(type="submit") Chơi
+						.form-group
+							input.form-control(type="text" name="username")
+						.form-group
+							input.form-control(type="text" name="password")
+						.form-group
+							button.btn.btn-primary(type="submit") Chơi

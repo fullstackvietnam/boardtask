@@ -5,17 +5,22 @@ block content
 		.container
 			.row
 				.col
-					h1 Products 
+					h1.mt-4 Products
+					p API: 
+						a(href="/api/v1/products") /api/v1/products
 					table.table.table-bordered
 						thead
 							tr 
 								th SP
 								th Name
 								th Code
+								th API
 						tbody
 							- for(var sp in data)
 								tr 
 									td
-										a(href="/details/"+data[sp].id) #{data[sp].name}
+										a(href="/detail/"+data[sp].id) #{data[sp].name}
 									td=data[sp].name
 									td=data[sp].code
+									td
+										a(href="/api/v1/detail/"+data[sp].id) /api/v1/detail/#{data[sp].id}
