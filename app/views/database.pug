@@ -1,23 +1,22 @@
 extends layout
 
 block content
-	#app
-		.container
-			.row
-				.col
-					h1.mt-4 #{title}
-					table.table.table-bordered
-						thead
+	.container
+		.row
+			.col
+				h1.mt-4 #{title}
+				table.table.table-bordered
+					thead
+						tr 
+							th ID
+							th Name
+							th Address
+					tbody
+						- for(var user in data)
 							tr 
-								th ID
-								th Name
-								th Address
-						tbody
-							- for(var user in data)
-								tr 
-									td #{data[user].id}
-									td #{data[user].name}
-									td #{data[user].address}
-									
- 
+								td #{data[user].id}
+								td #{data[user].name}
+								td #{data[user].address}
+								
+
 					

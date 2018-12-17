@@ -1,58 +1,26 @@
 extends layout
 
 block content
-	#app
-		.menuleft 
-			ul.list-group
-				li.list-group-item.active
-					a.list-group-item-action(href="/") 
-						img(src="./img/favicon.png", alt="")
-				li.list-group-item 
-					a.list-group-item-action(href="/login") 
-						i.fa.fa-key
-				li.list-group-item 
-					a.list-group-item-action(href="/products") 
-						i.fa.fa-shopping-cart
-				li.list-group-item
-					a.list-group-item-action(href="/database") 
-						i.fa.fa-database
-			ul.list-group
-				li.list-group-item 
-					a.list-group-item-action(href="/settings") 
-						i.fa.fa-cog
-		.menuright
-			ul.nav.justify-content-between.align-items-center
-				li.nav-item
-					h3 NETA Vietnam
-				li.nav-item.dropdown
-					a.nav-link.pr-0(href="#", id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
-						span.name.mr-2 Guest
-						img(src="./img/favicon.png", alt="")
-					.dropdown-menu.dropdown-menu-right(aria-labelledby="navbarDropdown")
-						a#info.dropdown-item(href='javascript:void(0)', onclick="getInfoUser()") Thông tin
-						a#logout.dropdown-item(href='javascript:void(0);' onclick="logOut()") Đăng xuất
-	
-			#maincontent 
-				.container-fluid
-					.row
-						.col-md-4
-							.card.card-primary
-								h5.card-header Featured
-								.card-body
-									ul.list-group#list-1
-										
-						.col-md-4
-							.card.card-success
-								h5.card-header Featured
-								.card-body
-									ul.list-group#list-2
+	.container-fluid
+		.row
+			.col-md-4
+				.card.card-primary
+					h5.card-header Featured
+					.card-body
+						ul.list-group#list-1
+							
+			.col-md-4
+				.card.card-success
+					h5.card-header Featured
+					.card-body
+						ul.list-group#list-2
 
-										
-						.col-md-4
-							.card.card-info
-								h5.card-header Featured
-								.card-body
-									h5.card-title Special title treatment
-									p.card-text With supporting text below as a natural lead-in to additional content.
-									a.btn.btn-primary(href="#") Go somewhere
+							
+			.col-md-4
+				.card.card-info
+					h5.card-header Featured
+					.card-body
+						h5.card-title Special title treatment
+						p.card-text With supporting text below as a natural lead-in to additional content.
+						a.btn.btn-primary(href="#") Go somewhere
 
