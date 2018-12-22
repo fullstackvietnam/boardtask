@@ -12,11 +12,10 @@ var con = mysql.createConnection({
 
 router.get('/', (req, res, next) => {
 
-	con.connect(function (err) {
-		if (err) throw err;
+	con.connect(function () {
 		console.log("Connected!");
-		var sql = "SELECT * FROM `customers` WHERE name='Nguyen' ORDER BY id";
-		// var sql = "INSERT INTO `customers`(`id`, `name`, `address`) VALUES (null,'dsf dsfdsfsd','cg  sdgdsgds fsdf')";
+		var sql = "SELECT * FROM `customers` ORDER BY id";
+		// var sql = "INSERT INTO `customers`(`id`, `name`, `address`) VALUES (null,'111111','454353453453')";
 		con.query(sql, function (err, result) {
 			if (err) throw err;
 			res.render('database', {
